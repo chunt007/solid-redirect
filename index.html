@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="refresh" content="0; url=https://TARGET_URL/" />
+  <script>
+    // Extract "code" from URL
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    // Send to React Native WebView
+    if (window.ReactNativeWebView && code) {
+      window.ReactNativeWebView.postMessage(code);
+    }
+  </script>
 </head>
 <body>
+  Redirecting...
 </body>
 </html>
